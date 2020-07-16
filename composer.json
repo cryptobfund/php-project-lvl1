@@ -1,0 +1,12 @@
+{
+    "name": "johnik/first-project",
+    "description": "hexlet first php project",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Johnik",
+            "email": "cryptobfund@gmail.com"
+        }
+    ],
+    "require": {}
+}
