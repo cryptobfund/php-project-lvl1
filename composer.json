@@ -9,4 +9,7 @@
         }
     ],
     "require": {}
+    "bin": [
+	          "bin/brain-games"
+		      ]
 }
