@@ -8,8 +8,13 @@
             "email": "cryptobfund@gmail.com"
         }
     ],
-    "require": {}
-    "bin": [
-	          "bin/brain-games"
-		      ]
+    "bin": ["bin/brain-games"],
+    "require": {
+        "wp-cli/php-cli-tools": "^0.11.11"
+    },
+    "autoload": {
+        "files": [
+            "src/Cli.php"
+        ]
+    }
 }
