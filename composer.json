@@ -16,5 +16,12 @@
         "files": [
             "src/Cli.php"
         ]
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.5"
+    },
+    "scripts": {
+	"phpcs": "phpcs"
     }
 }
+
