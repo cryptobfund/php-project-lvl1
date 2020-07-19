@@ -6,6 +6,6 @@
 ![PHP CI](https://github.com/cryptobfund/php-project-lvl1/workflows/PHP%20CI/badge.svg)
 
 
-[![asciicast](https://asciinema.org/a/6uVZxMts9jeotpDm8DLljQALd.svg)](https://asciinema.org/a/6uVZxMts9jeotpDm8DLljQALd?speed=2&autoplay=1&size=small&theme=tango)
+[![asciicast](https://asciinema.org/a/wPoDc5d9C61yoSajTU6b1lJLg.svg)](https://asciinema.org/a/wPoDc5d9C61yoSajTU6b1lJLg?speed=2&autoplay=1&size=small&theme=tango)
 
 
