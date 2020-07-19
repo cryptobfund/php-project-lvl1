@@ -24,9 +24,9 @@ jobs:
         with:
           # Specify the PHP version
           php-version: '7.2'
-      #- name: Install
+      - name: Install
         # Install project
-      #  run: make install
+        run: make install
       #- name: Run linter
         # Run Linter
       #  run: make lint
