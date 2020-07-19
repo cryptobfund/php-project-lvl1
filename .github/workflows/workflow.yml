@@ -23,22 +23,22 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           # Specify the PHP version
-          php-version: '7.3'
-      - name: Install
+          php-version: '7.2'
+      #- name: Install
         # Install project
-        run: make install
-      - name: Run linter
+      #  run: make install
+      #- name: Run linter
         # Run Linter
-        run: make lint
+      #  run: make lint
         # Publish code coverage on Code Climate
         # https://github.com/paambaati/codeclimate-action
-      - name: Run test & publish code coverage
-        uses: paambaati/codeclimate-action@v2.6.0
+      #- name: Run test & publish code coverage
+      #  uses: paambaati/codeclimate-action@v2.6.0
         # Add Code Climate secret key
-        env:
-          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-        with:
-          coverageCommand: make test-coverage
-          coverageLocations: ${{github.workplace}}/build/logs/clover.xml:clover
-          debug: true
+      #  env:
+      #    CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+      #  with:
+      #    coverageCommand: make test-coverage
+      #    coverageLocations: ${{github.workplace}}/build/logs/clover.xml:clover
+      #    debug: true
           
