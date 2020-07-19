@@ -1,0 +1,55 @@
+#!/usr/bin/env php
+
+<?php
+
+use function cli\line;
+use function cli\prompt;
+
+$autoloadPath1 = __DIR__ . '/../../../autoload.php';
+
+$autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
+
+if (file_exists($autoloadPath1)) {
+
+    require_once $autoloadPath1;
+
+} else {
+    require_once $autoloadPath2;
+
+}
+
+const MIN_RAND = 0;
+const MAX_RAND = 100;
+
+function isEven($num)
+{
+    return ($num % 2 === 0) ? true : false;
+}
+
+function run()
+{
+    line('Welcome to the Brain Game!');
+    line('Answer "yes" if the number is even, otherwise answer "no"'.PHP_EOL);
+    $name = prompt('May I have your name?');
+    line("Hello, {$name}!\n");
+
+    for ($i = 1; $i <=3; $i++) {
+        $num = rand(MIN_RAND, MAX_RAND);
+        line("Question: {$num}");
+        $answer = prompt("Your answer");
+        if (isEven($num)) {
+            $correctAnswer = "yes";
+        } else {
+            $correctAnswer = "no";
+        }
+        if ($correctAnswer !== $answer) {
+            line("'{$answer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
+            line("Let's try again, {$name}!");
+            return;
+        } else {
+            line("Correct!");
+        }
+    }
+    line("Congratulations, {$name}!");
+}
+run();
