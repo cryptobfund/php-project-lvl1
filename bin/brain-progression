@@ -15,5 +15,4 @@ if (file_exists($autoloadPath1)) {
 
 }
 
-First\Project\Engine\gameStart('Even');
-
+First\Project\Engine\gameStart('Progression');

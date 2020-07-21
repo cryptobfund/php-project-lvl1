@@ -1,12 +1,25 @@
 <?php
 
-namespace First\Project\Even;
+namespace First\Project\Prime;
 
 //Описываем параметры настроек игры
-const GAME_DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no"'; //общее описание и вопрос игры
+const GAME_DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".?';//общее описание и вопрос игры
 const MIN_RAND = 0; //мнимальное для генерации числа вопроса значение
 const MAX_RAND = 10; //максимальное для генерации числа вопроса значение
 const GAME_STEPS_LIMIT = 3; //лимит шагов в игре
+
+function isPrime($num)
+{
+    if ($num == 1) {
+        return 0;
+    }
+    for ($i = 2; $i <= sqrt($num); $i++) {
+        if ($num % $i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
 
 function getConst()
 {
@@ -19,7 +32,7 @@ function getConst()
 function makeQuestionValues()
 {
     $num = rand(MIN_RAND, MAX_RAND);
-    if ($num % 2 === 0) {
+    if (isPrime($num)) {
         $correctValue = 'yes';
     } else {
         $correctValue = 'no';
