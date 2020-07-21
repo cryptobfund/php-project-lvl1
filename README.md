@@ -5,6 +5,7 @@
 
 ---
 
+#### First project of PHP-developer profession education programm [Hexlet](https://ru.hexlet.io/)
 #### Первый проект программы обучения по профессии "PHP-программист" от [Hexlet](https://ru.hexlet.io/)
 
 ---
@@ -14,17 +15,17 @@ composer global require johnik/first-project
 
 ---
 
-#### asciinema для игры "brain-even"
+#### "brain-even" asciinema 
 [![asciicast](https://asciinema.org/a/wPoDc5d9C61yoSajTU6b1lJLg.svg)](https://asciinema.org/a/wPoDc5d9C61yoSajTU6b1lJLg?speed=2&autoplay=1&size=small&theme=tango)
 
-#### asciinema для игры "brain-calc"
+#### "brain-calc" asciinema
 [![asciicast](https://asciinema.org/a/qcUouUPC6dBBrlKESZkZQlU2a.svg)](https://asciinema.org/a/qcUouUPC6dBBrlKESZkZQlU2a?speed=2&autoplay=1&size=small&theme=tango)
 
-#### asciinema для игры "brain-gcd"
+#### "brain-gcd" asciinema
 [![asciicast](https://asciinema.org/a/qcUouUPC6dBBrlKESZkZQlU2a.svg)](https://asciinema.org/a/qcUouUPC6dBBrlKESZkZQlU2a?speed=2&autoplay=1&size=small&theme=tango)
 
-#### asciinema для игры "brain-progression"
+#### "brain-progression" asciinema
 [![asciicast](https://asciinema.org/a/MgyVmsOy6LlAaozH0PotPDoYq.svg)](https://asciinema.org/a/MgyVmsOy6LlAaozH0PotPDoYq?speed=2&autoplay=1&size=small&theme=tango)
 
-#### asciinema для игры "brain-prime"
+#### "brain-prime" asciinema
 [![asciicast](https://asciinema.org/a/dLkFJShDGsSAGqetLIdFkTUBj.svg)](https://asciinema.org/a/dLkFJShDGsSAGqetLIdFkTUBj?speed=2&autoplay=1&size=small&theme=tango)
