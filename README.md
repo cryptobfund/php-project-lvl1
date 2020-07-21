@@ -11,3 +11,5 @@
 [![asciicast](https://asciinema.org/a/qcUouUPC6dBBrlKESZkZQlU2a.svg)](https://asciinema.org/a/qcUouUPC6dBBrlKESZkZQlU2a?speed=2&autoplay=1&size=small&theme=tango)
 
 [![asciicast](https://asciinema.org/a/qcUouUPC6dBBrlKESZkZQlU2a.svg)](https://asciinema.org/a/qcUouUPC6dBBrlKESZkZQlU2a?speed=2&autoplay=1&size=small&theme=tango)
+
+[![asciicast](https://asciinema.org/a/MgyVmsOy6LlAaozH0PotPDoYq.svg)](https://asciinema.org/a/MgyVmsOy6LlAaozH0PotPDoYq?speed=2&autoplay=1&size=small&theme=tango)
