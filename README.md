@@ -10,7 +10,7 @@
 
 ---
 
-#### Instalation package
+#### Installation
 composer global require johnik/first-project
 
 ---
