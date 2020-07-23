@@ -15,7 +15,6 @@ function gameStart($fnMakeQuVal, $gameDesc)
     line("Hello, {$name}!\n");
 
     for ($i = 1; $i <= GAME_STEPS_LIMIT; $i++) {
-
         //Получаем вопрос и правильный ответ игры
         $gameParams = call_user_func($fnMakeQuVal);
 
