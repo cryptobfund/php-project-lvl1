@@ -2,52 +2,39 @@
 
 namespace First\Project\Engine;
 
-use First\Project\Cli;
+use function cli\line;
+use function cli\prompt;
 
-function checkAnswer($answer, $correctAnswer)
+const GAME_STEPS_LIMIT = 3; //лимит шагов в игре
+
+function gameStart($fnMakeQuVal, $gameDesc)
 {
-    return $answer == $correctAnswer; //делаем не полное сравнение поскольку разные типы данных (число и строка)
-}
+    line('Welcome to Brain Games!');
+    line("{$gameDesc}\n");
+    $name = prompt('May I have your name?');
+    line("Hello, {$name}!\n");
 
-function getGameParams($gameName)
-{
-    $makeQuestionValues = "First\Project\\" . $gameName . "\makeQuestionValues";
-    return $makeQuestionValues();
-}
+    for ($i = 1; $i <= GAME_STEPS_LIMIT; $i++) {
 
-function getConst($gameName)
-{
-    $gameConst = "First\Project\\" . $gameName . "\getConst";
-    return $gameConst();
-}
-
-function gameStart($gameName)
-{
-    $gameConst = getConst($gameName);
-    Cli\commonWelcome();
-    Cli\gameDescription($gameConst['gameDesc']);
-    $gamerName = Cli\getGamerName();
-
-    for ($i = 1; $i <= $gameConst['gameStepsLim']; $i++) {
         //Получаем вопрос и правильный ответ игры
-        $gameParams = getGameParams($gameName);
+        $gameParams = call_user_func($fnMakeQuVal);
+
         //задаем вопрос игроку
-        Cli\askQuestion($gameParams['strQuestionValue']);
+        line("Question: {$gameParams['strQuestionValue']}");
 
         //получаем ответ от игрока
-        $answer = Cli\getAnswer();
+        $answer = prompt("Your answer");
 
-        //проверяем корекктность ответа
         $correctVal = $gameParams['correctValue'];
-        $isCorrect = checkAnswer($answer, $correctVal);
-
         //выводим результат шага игры
-        Cli\showStepResult($answer, $correctVal, $isCorrect, $gamerName);
-        if (!$isCorrect) {
+        if ($correctVal == $answer) {
+            line("Correct!");
+        } else {
+            line("'{$answer}' is wrong answer ;(. Correct answer was '{$correctVal}'.");
+            line("Let's try again, {$name}!");
             return;
         }
     }
-
     //Поздравляем игрока с победой
-    Cli\showGameResult($gamerName);
+    line("Congratulations, {$name}!");
 }

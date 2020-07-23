@@ -15,4 +15,4 @@ if (file_exists($autoloadPath1)) {
 
 }
 
-First\Project\Engine\gameStart('Prime');
+First\Project\Games\Prime\start();

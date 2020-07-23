@@ -15,4 +15,4 @@ if (file_exists($autoloadPath1)) {
 
 }
 
-First\Project\Engine\gameStart('Progression');
+First\Project\Games\Progression\start();

@@ -15,5 +15,5 @@ if (file_exists($autoloadPath1)) {
 
 }
 
-First\Project\Engine\gameStart('Calc');
+First\Project\Games\Calc\start();
 
