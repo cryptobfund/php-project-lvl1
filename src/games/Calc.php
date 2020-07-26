@@ -1,44 +1,28 @@
 <?php
 
-namespace First\Project\Games\Calc;
+namespace First\Project\Games\Even;
 
 use function First\Project\Engine\gameStart;
 
-const GAME_DESCRIPTION = 'What is the result of the expression?'; //общее описание и вопрос игры
+const GAME_DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no"'; //общее описание и вопрос игры
 const MIN_RAND = 0; //мнимальное для генерации числа вопроса значение
 const MAX_RAND = 10; //максимальное для генерации числа вопроса значение
-const OPERATIONS = ['+', '-', '*']; //массив возможных математических операций в задаче игры
 
 function generateRoundData()
 {
-    $firstNum = rand(MIN_RAND, MAX_RAND);
-    $secondNum = rand(MIN_RAND, MAX_RAND);
-    $operation = OPERATIONS[rand(0, count(OPERATIONS) - 1)];
-    try {
-        $answer = (string) calculate($firstNum, $secondNum, $operation);
-    } catch (\Exception $e) {
-        echo "\n", "Program error. " , $e->getMessage(), "\n";
-        exit;
-    }
+    $num = rand(MIN_RAND, MAX_RAND);
     return [
-        'answer' => $answer,
-        'question' => "{$firstNum} {$operation} {$secondNum}"
+        'answer' => isEven($num) ? 'yes' : 'no',
+        'question' => (string) $num
     ];
 }
+
 function start()
 {
     gameStart(fn() => generateRoundData(), GAME_DESCRIPTION);
 }
-function calculate($firstNum, $secondNum, $operation)
+
+function isEven($num)
 {
-    switch ($operation) {
-        case '*':
-            return $firstNum * $secondNum;
-        case '-':
-            return $firstNum - $secondNum;
-        case '+':
-            return $firstNum + $secondNum;
-        default:
-            throw new \Exception('Operator not found');
-    }
+    return $num % 2 === 0;
 }
