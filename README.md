@@ -1,6 +1,6 @@
 # first-project
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/bf26025cb9b4c42dd806/maintainability)](https://codeclimate.com/github/cryptobfund/php-project-lvl1/maintainability)
 [![PHP CI](https://github.com/cryptobfund/php-project-lvl1/workflows/PHP%20CI/badge.svg)](https://github.com/cryptobfund/php-project-lvl1/actions)
 
 ---
