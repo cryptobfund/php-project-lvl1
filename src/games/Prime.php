@@ -16,12 +16,10 @@ function generateRoundData()
         'question' => (string) $num
     ];
 }
-
 function start()
 {
     gameStart(fn() => generateRoundData(), GAME_DESCRIPTION);
 }
-
 function isPrime($num)
 {
     if ($num < 2) {

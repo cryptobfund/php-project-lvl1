@@ -8,7 +8,6 @@ const GAME_DESCRIPTION = 'Find the greatest common divisor of given numbers'; //
 const MIN_RAND = 1; //мнимальное для генерации числа вопроса значение
 const MAX_RAND = 10; //максимальное для генерации числа вопроса значение
 
-
 function generateRoundData()
 {
     $firstNum = rand(MIN_RAND, MAX_RAND);
@@ -18,12 +17,10 @@ function generateRoundData()
         'question' => "{$firstNum} {$secondNum}"
     ];
 }
-
 function start()
 {
     gameStart(fn() => generateRoundData(), GAME_DESCRIPTION);
 }
-
 function gcd($firstNum, $secondNum)
 {
     $a = abs($firstNum);

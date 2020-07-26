@@ -22,12 +22,10 @@ function generateRoundData()
         'question' => implode(' ', $progression)
     ];
 }
-
 function start()
 {
     gameStart(fn() => generateRoundData(), GAME_DESCRIPTION);
 }
-
 function generateProgression($firstP, $stepP, $lenthP)
 {
     $result = [];

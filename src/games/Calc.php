@@ -9,7 +9,6 @@ const MIN_RAND = 0; //мнимальное для генерации числа 
 const MAX_RAND = 10; //максимальное для генерации числа вопроса значение
 const OPERATIONS = ['+', '-', '*']; //массив возможных математических операций в задаче игры
 
-
 function generateRoundData()
 {
     $firstNum = rand(MIN_RAND, MAX_RAND);
@@ -26,12 +25,10 @@ function generateRoundData()
         'question' => "{$firstNum} {$operation} {$secondNum}"
     ];
 }
-
 function start()
 {
     gameStart(fn() => generateRoundData(), GAME_DESCRIPTION);
 }
-
 function calculate($firstNum, $secondNum, $operation)
 {
     switch ($operation) {
