@@ -4,7 +4,7 @@ namespace First\Project\Games\Gcd;
 
 use function First\Project\Engine\gameStart;
 
-const GAME_DESCRIPTION = 'Find the greatest common divisor of given numbers'; //общее описание и вопрос игры
+const GAME_DESCRIPTION = 'Find the greatest common divisor of given numbers.'; //общее описание и вопрос игры
 const MIN_RAND = 1; //мнимальное для генерации числа вопроса значение
 const MAX_RAND = 10; //максимальное для генерации числа вопроса значение
 
@@ -19,7 +19,9 @@ function generateRoundData()
 }
 function start()
 {
-    gameStart(fn() => generateRoundData(), GAME_DESCRIPTION);
+    gameStart(function () {
+        return generateRoundData();
+    }, GAME_DESCRIPTION);
 }
 function gcd($firstNum, $secondNum)
 {

@@ -25,6 +25,7 @@ function generateRoundData()
         'question' => "{$firstNum} {$operation} {$secondNum}"
     ];
 }
+
 function start()
 {
     gameStart(function () {

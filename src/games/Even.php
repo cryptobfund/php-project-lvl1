@@ -4,7 +4,7 @@ namespace First\Project\Games\Even;
 
 use function First\Project\Engine\gameStart;
 
-const GAME_DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no"'; //общее описание и вопрос игры
+const GAME_DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".'; //общее описание и вопрос игры
 const MIN_RAND = 0; //мнимальное для генерации числа вопроса значение
 const MAX_RAND = 10; //максимальное для генерации числа вопроса значение
 
@@ -19,7 +19,9 @@ function generateRoundData()
 
 function start()
 {
-    gameStart(fn() => generateRoundData(), GAME_DESCRIPTION);
+    gameStart(function () {
+        return generateRoundData();
+    }, GAME_DESCRIPTION);
 }
 
 function isEven($num)
