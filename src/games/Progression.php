@@ -24,9 +24,7 @@ function generateRoundData()
 }
 function start()
 {
-    gameStart(function () {
-        return generateRoundData();
-    }, GAME_DESCRIPTION);
+    gameStart(fn() => generateRoundData(), GAME_DESCRIPTION);
 }
 function generateProgression($firstP, $stepP, $lenthP)
 {
