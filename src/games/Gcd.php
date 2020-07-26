@@ -8,19 +8,20 @@ const GAME_DESCRIPTION = 'Find the greatest common divisor of given numbers'; //
 const MIN_RAND = 1; //мнимальное для генерации числа вопроса значение
 const MAX_RAND = 10; //максимальное для генерации числа вопроса значение
 
+
+function generateRoundData()
+{
+    $firstNum = rand(MIN_RAND, MAX_RAND);
+    $secondNum = rand(MIN_RAND, MAX_RAND);
+    return [
+        'answer' => (string) gcd($firstNum, $secondNum),
+        'question' => "{$firstNum} {$secondNum}"
+    ];
+}
+
 function start()
 {
-    $fnMakeQuVal = function () {
-        $firstNum = rand(MIN_RAND, MAX_RAND);
-        $secondNum = rand(MIN_RAND, MAX_RAND);
-        $correctValue = gcd($firstNum, $secondNum);
-        $strQuestionValue = "{$firstNum} {$secondNum}";
-        return [
-            'correctValue' => (string) $correctValue,
-            'strQuestionValue' => $strQuestionValue
-        ];
-    };
-    gameStart($fnMakeQuVal, GAME_DESCRIPTION);
+    gameStart(fn() => generateRoundData(), GAME_DESCRIPTION);
 }
 
 function gcd($firstNum, $secondNum)

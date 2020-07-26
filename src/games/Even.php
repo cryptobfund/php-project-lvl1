@@ -8,18 +8,18 @@ const GAME_DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "
 const MIN_RAND = 0; //мнимальное для генерации числа вопроса значение
 const MAX_RAND = 10; //максимальное для генерации числа вопроса значение
 
+function generateRoundData()
+{
+    $num = rand(MIN_RAND, MAX_RAND);
+    return [
+        'answer' => isEven($num) ? 'yes' : 'no',
+        'question' => (string) $num
+    ];
+}
+
 function start()
 {
-    $fnMakeQuVal = function () {
-        $num = rand(MIN_RAND, MAX_RAND);
-        $correctValue = isEven($num) ? 'yes' : 'no';
-        $strQuestionValue = $num;
-        return [
-            'correctValue' =>  $correctValue,
-            'strQuestionValue' => (string) $strQuestionValue
-        ];
-    };
-    gameStart($fnMakeQuVal, GAME_DESCRIPTION);
+    gameStart(fn() => generateRoundData(), GAME_DESCRIPTION);
 }
 
 function isEven($num)

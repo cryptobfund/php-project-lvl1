@@ -7,7 +7,7 @@ use function cli\prompt;
 
 const GAME_STEPS_LIMIT = 3; //лимит шагов в игре
 
-function gameStart($fnMakeQuVal, $gameDesc)
+function gameStart($generateRoundData, $gameDesc)
 {
     line('Welcome to Brain Games!');
     line("{$gameDesc}\n");
@@ -16,23 +16,21 @@ function gameStart($fnMakeQuVal, $gameDesc)
 
     for ($i = 1; $i <= GAME_STEPS_LIMIT; $i++) {
         //Получаем вопрос и правильный ответ игры
-        $gameParams = call_user_func($fnMakeQuVal);
+        ['question' => $question, 'answer' => $answer] = $generateRoundData();
 
         //задаем вопрос игроку
-        line("Question: {$gameParams['strQuestionValue']}");
+        line("Question: {$question}");
 
         //получаем ответ от игрока
-        $answer = prompt("Your answer");
+        $answerGamer = prompt("Your answer");
 
-        $correctVal = $gameParams['correctValue'];
         //выводим результат шага игры
-        if ($correctVal == $answer) {
-            line("Correct!");
-        } else {
-            line("'{$answer}' is wrong answer ;(. Correct answer was '{$correctVal}'.");
+        if ($answerGamer !== $answer) {
+            line("'{$answerGamer}' is wrong answer ;(. Correct answer was '{$answer}'.");
             line("Let's try again, {$name}!");
             return;
         }
+        line("Correct!");
     }
     //Поздравляем игрока с победой
     line("Congratulations, {$name}!");

@@ -9,25 +9,26 @@ const MIN_RAND = 0; //мнимальное для генерации числа 
 const MAX_RAND = 10; //максимальное для генерации числа вопроса значение
 const PROGRESSION_LENGTH = 10;
 
-function start()
+function generateRoundData()
 {
-    $fnMakeQuVal = function () {
-        $firstMemberOfProgression = rand(MIN_RAND, MAX_RAND);
-        $stepOfProgression = rand(MIN_RAND, MAX_RAND);
-        $indexHiddenOfProgression = rand(0, PROGRESSION_LENGTH - 1);
-        $progression = makeProgression($firstMemberOfProgression, $stepOfProgression, PROGRESSION_LENGTH);
-        $correctValue = $progression[$indexHiddenOfProgression];
-        $progression[$indexHiddenOfProgression] = '..';
-        $strQuestionValue = implode(' ', $progression);
-        return [
-            'correctValue' => (string) $correctValue,
-            'strQuestionValue' => $strQuestionValue
-        ];
-    };
-    gameStart($fnMakeQuVal, GAME_DESCRIPTION);
+    $firstMemberOfProgression = rand(MIN_RAND, MAX_RAND);
+    $stepOfProgression = rand(MIN_RAND, MAX_RAND);
+    $indexHiddenOfProgression = rand(0, PROGRESSION_LENGTH - 1);
+    $progression = generateProgression($firstMemberOfProgression, $stepOfProgression, PROGRESSION_LENGTH);
+    $answer = (string) $progression[$indexHiddenOfProgression];
+    $progression[$indexHiddenOfProgression] = '..';
+    return [
+        'answer' => $answer,
+        'question' => implode(' ', $progression)
+    ];
 }
 
-function makeProgression($firstP, $stepP, $lenthP)
+function start()
+{
+    gameStart(fn() => generateRoundData(), GAME_DESCRIPTION);
+}
+
+function generateProgression($firstP, $stepP, $lenthP)
 {
     $result = [];
     for ($i = 0; $i < $lenthP; $i++) {

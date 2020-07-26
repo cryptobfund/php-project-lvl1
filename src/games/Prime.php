@@ -8,28 +8,27 @@ const GAME_DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answe
 const MIN_RAND = 0; //мнимальное для генерации числа вопроса значение
 const MAX_RAND = 10; //максимальное для генерации числа вопроса значение
 
+function generateRoundData()
+{
+    $num = rand(MIN_RAND, MAX_RAND);
+    return [
+        'answer' => isPrime($num) ? 'yes' : 'no',
+        'question' => (string) $num
+    ];
+}
+
 function start()
 {
-    $fnMakeQuVal = function () {
-        $num = rand(MIN_RAND, MAX_RAND);
-        $correctValue = isPrime($num) ? 'yes' : 'no';
-        $strQuestionValue = $num;
-        return [
-            'correctValue' => (string) $correctValue,
-            'strQuestionValue' => (string) $strQuestionValue
-        ];
-    };
-    gameStart($fnMakeQuVal, GAME_DESCRIPTION);
+    gameStart(fn() => generateRoundData(), GAME_DESCRIPTION);
 }
 
 function isPrime($num)
 {
-    $absNum = abs($num);
-    if (($absNum == 1) || ($absNum == 0)) {
+    if ($num < 2) {
         return false;
     }
-    for ($i = 2; $i <= sqrt($absNum); $i++) {
-        if ($absNum % $i == 0) {
+    for ($i = 2; $i <= sqrt($num); $i++) {
+        if ($num % $i == 0) {
             return false;
         }
     }
